@@ -33,21 +33,14 @@ public class TopicServiceImpl implements TopicService {
 	}
 
 	public Optional<Topic> getTopic(String id) {
-		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 		return topicRepository.findById(id);
 	}
 
 	public Topic getTopicByName(String name) {
-//		ArrayList<Topic> topics = new ArrayList<Topic>();
-//		topicRepository.findAll().forEach(topics::add);
-//		return topics.stream().filter(t -> t.getName().equals(name)).findFirst().get();
-		
 		return topicRepository.findByName(name);
 	}
 
 	public void addTopic(Topic topic) {
-		System.out.println("topic: " + topic);
-		
 		topicRepository.save(topic);
 	}
 	

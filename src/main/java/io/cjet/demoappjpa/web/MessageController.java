@@ -32,12 +32,12 @@ public class MessageController {
 	@Qualifier("MessageServiceImpl") 
 	private MessageService messageService;
 	
-	@RequestMapping("/topics/{id}/messages")
+	@RequestMapping(method=RequestMethod.GET, value="/topics/{id}/messages")
 	public List<Message> getAllMessages(@PathVariable String id) {
 		return messageService.getAllMessages(id);
 	}
 	
-	@RequestMapping("/topics/{topicId}/message/{id}")
+	@RequestMapping(method=RequestMethod.GET, value="/topics/{topicId}/message/{id}")
 	public Optional<Message> getMessage(@PathVariable String id) {
 		return messageService.getMessage(id);
 	}

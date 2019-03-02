@@ -1,5 +1,7 @@
 package io.cjet.demoappjpa;
 
+import static org.junit.Assert.assertNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +13,7 @@ public class CjetDemoSpringAppJpaApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		assertNull(null);
 	}
 
 }

@@ -33,21 +33,14 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	public Optional<Message> getMessage(String id) {
-		//return Messages.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 		return messageRepository.findById(id);
 	}
 
 	public Message getMessageByName(String name) {
-//		ArrayList<Message> messages = new ArrayList<Message>();
-//		messageRepository.findAll().forEach(messages::add);
-//		return messages.stream().filter(t -> t.getName().equals(name)).findFirst().get();
-		
 		return messageRepository.findByName(name);
 	}
 
 	public void addMessage(Message message) {
-		System.out.println("Message: " + message);
-		
 		messageRepository.save(message);
 	}
 	

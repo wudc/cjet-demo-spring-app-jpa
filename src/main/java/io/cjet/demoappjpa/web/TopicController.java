@@ -32,17 +32,17 @@ public class TopicController {
 	@Qualifier("TopicServiceImpl") 
 	private TopicService topicService;
 	
-	@RequestMapping("/topics")
+	@RequestMapping(method=RequestMethod.GET, value="/topics")
 	public List<Topic> getAllTopics() {
 		return topicService.getAllTopics();
 	}
 	
-	@RequestMapping("/topics/{id}")
+	@RequestMapping(method=RequestMethod.GET, value="/topics/{id}")
 	public Optional<Topic> getTopic(@PathVariable String id) {
 		return topicService.getTopic(id);
 	}
 	
-	@RequestMapping("/topics/byname/{name}")
+	@RequestMapping(method=RequestMethod.GET, value="/topics/byname/{name}")
 	public Topic getTopicByName(@PathVariable String name) {
 		return topicService.getTopicByName(name);
 	}
@@ -52,7 +52,7 @@ public class TopicController {
 		topicService.addTopic(topic);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/topics")
+	@RequestMapping(method=RequestMethod.PUT, value="/topics/update")
 	public void updateTopic(@RequestBody Topic topic) {
 		topicService.updateTopic(topic);
 	}
