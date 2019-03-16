@@ -68,6 +68,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>4.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -133,12 +138,9 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<!-- Optional URL to server. Default value is http://localhost:9000
-				<sonar.host.url>
-					http://localhost:9000
-				</sonar.host.url>
-				 -->
-				<!-- To SonarCloud service provider.  -->
+				<!-- Optional URL to server. Default value is http://localhost:9000 <sonar.host.url> 
+					http://localhost:9000 </sonar.host.url> -->
+				<!-- To SonarCloud service provider. -->
 				<sonar.host.url>
 					https://sonarcloud.io
 				</sonar.host.url>
@@ -148,7 +150,7 @@
 				<sonar.organization>
 					wudc-github
 				</sonar.organization>
-				
+
 			</properties>
 		</profile>
 	</profiles>
